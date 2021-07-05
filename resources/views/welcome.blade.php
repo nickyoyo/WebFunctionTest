@@ -1,21 +1,35 @@
 @extends('layouts.master')
+@extends('layouts.list')
 
 @section('content')
     <body class="antialiased">
       <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-      
                 <div class="topic">
                     <h1>歡迎使用本系統</h1>         
                </div>
                @if(isset(Auth::user()->email))
-                <li><a href="/create" class="back"  style="color:black">新增商品</a><br>
-                <li><a href="/createQ" class="back"  style="color:black">新增問題回報</a>
+               <ul class="navigation">
+                <li>  
+                    <dl>
+                        <dt><a href="" target='_parent'>功能A</a></dt>
+                        <dd><a href="" target='_parent'>功能A-1</a></dd>
+                        <dd><a href="" target='_parent'>功能A-2</a></dd>
+                        <dd><a href="" target='_parent'>功能A-3</a></dd>
+                    </dl>
+                </li> 
+                <li>  
+                    <dl>
+                        <dt><a href="" target='_parent'>功能B</a></dt>
+                        <dd><a href="" target='_parent'>功能B-1</a></dd>
+                        <dd><a href="" target='_parent'>功能B-2</a></dd>
+                        <dd><a href="" target='_parent'>功能B-3</a></dd>
+                    </dl>
+                </li> 
+            </ul>
                @else
                <br><br>             
                @endif
-               <div class="topicwel" >
-
-               </div>
+               
              
         </div>
     </body>
