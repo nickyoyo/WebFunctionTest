@@ -5,7 +5,7 @@
     <body class="antialiased">
       <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="topic">
-                    <h1>歡迎使用本系統</h1>         
+                    <h1>功能B-2</h1>         
                </div>
                @if(isset(Auth::user()->email))
                <ul class="navigation">
