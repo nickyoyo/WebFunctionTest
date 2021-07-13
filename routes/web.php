@@ -29,8 +29,12 @@ Route::get('/PersonalData/{id}', [App\Http\Controllers\PDController ::class, 'Pe
 
 //A
 Route::get('/AFeature', [App\Http\Controllers\AFeature::class, 'index'])->name('Ahome');
+
 Route::get('/AFeature1', [App\Http\Controllers\AFeature::class, 'ONE'])->name('AOne');
+Route::get('/UploadA',[App\Http\Controllers\AFeature::class, 'AUpload'])->name('uploadA');
+
 Route::get('/AFeature2', [App\Http\Controllers\AFeature::class, 'TWO'])->name('ATwo');
+Route::post('/UpdateA/{id}',[App\Http\Controllers\AFeature::class, 'AUpdate'])->name('updateA');
 
 //B
 Route::get('/BFeature', [App\Http\Controllers\BFeature::class, 'index'])->name('Bhome');

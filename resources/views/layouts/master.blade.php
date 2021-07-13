@@ -41,7 +41,8 @@
                 color:#000000;
             }
             .tableborder{
-                width:100%;
+                width:800px;
+                margin: 0px auto;
                 border:1px solid black;
                 border-collapse:collapse;
             }
@@ -124,6 +125,10 @@
                 color:#555;
                 font-weight:solid;
                 font-size:20px;
+            }
+            label{
+                float:left;
+                width:80px;
             }
         </style>
 </head>
