@@ -14,13 +14,14 @@
 @if(count($test)>0)
 
     <td width="50%" text-align="left">
-        <?php if ($docPage > 1) { ?>
-        <form name="SelPage" method="get" action="{{ route('ATwo') }}">
+        <?php if ($docPage > 0) { ?>
+        <form name="SelPage" method="get" action="{{ route('ATwopage') }}">
         @csrf
         第<select name="Page" onchange="submit();">
         <?php 
         for ($p=1; $p<=$docPage; $p++) { 
             echo '  <option value="' . $p . '"';
+            if ($p == $page) echo ' selected';
             echo ">$p</option>";
         }
         ?>
@@ -36,22 +37,24 @@
         <th class="bordertopic">需求描述</th>
         <th class="bordertopic">處理進度</th>
     </tr>
+    @php $countitem=1; @endphp
     @foreach($test as $test1)
     <tfoot>
     <tr>
-   
+      @if($countitem>=($page-1)*10+1 && $countitem<=($page-1)*10+10)
         <td class="textw5 text-a-left">
-    @if($test1->status == 'waiting')
         <form action="{{ route('updateA', $test1->id) }}" method="POST">
         @csrf
         <button>Finish</button>
         </form>
-        @endif
+       
     <td class="textw5 text-a-center">{{$test1->type}}&nbsp;
     <td class="textw30 text-a-left">&nbsp;{{$test1->request}}<br>
     <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
     </tr>
     </tfoot>
+    @endif
+    @php $countitem++; @endphp
     @endforeach
 </table>
 

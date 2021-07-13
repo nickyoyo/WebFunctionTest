@@ -34,6 +34,7 @@ Route::get('/AFeature1', [App\Http\Controllers\AFeature::class, 'ONE'])->name('A
 Route::get('/UploadA',[App\Http\Controllers\AFeature::class, 'AUpload'])->name('uploadA');
 
 Route::get('/AFeature2', [App\Http\Controllers\AFeature::class, 'TWO'])->name('ATwo');
+Route::get('/AFeature2page', [App\Http\Controllers\AFeature::class, 'TWOpage'])->name('ATwopage');
 Route::post('/UpdateA/{id}',[App\Http\Controllers\AFeature::class, 'AUpdate'])->name('updateA');
 
 //B
