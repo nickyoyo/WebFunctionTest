@@ -129,11 +129,11 @@
 </head>
 <body>
 @section('sidebar')
-  
+    
         <div class="container-fluid">
             <div class="navbar-header">       
                 <a class="navbar-brand" href="/">首頁</a>
-                <a class="navbar-brand" href="/Question">今日消息</a>
+                <a class="navbar-brand" href="/news">今日消息</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -141,8 +141,8 @@
                         <li><a href="/login">登入</a></li>
                         <li><a href="/register">註冊</a></li>
                     @else
-                        <li><a href="/allorder">個人資料 <span class="fa fa-address-card" aria-hidden="true"></span></a></li>
-                        <li><a href="/Cart">部門功能 <span class="fa fa-suitcase"></span></a></li>
+                        <li><a href="{{ route('PD', Auth::user()->id )}}">個人資料 <span class="fa fa-address-card" aria-hidden="true"></span></a></li>
+                        <li><a href="/DepFeature">部門功能 <span class="fa fa-suitcase"></span></a></li>
                         <li><a>{{ Auth::user()->name }}   <span class="d-none"></span></a></li>
                         <li><a  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

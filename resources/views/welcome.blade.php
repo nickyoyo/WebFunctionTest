@@ -7,7 +7,6 @@
                 <div class="topic">
                     <h1>歡迎使用本系統</h1>         
                </div>
-               @if(isset(Auth::user()->email))
                <ul class="navigation">
                 <li>  
                     <dl>
@@ -24,9 +23,8 @@
                     </dl>
                 </li> 
             </ul>
-               @else
+
                <br><br>             
-               @endif
                
              
         </div>

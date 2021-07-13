@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @extends('layouts.list')
+@extends('layouts.notlogin')
 
 @section('content')
     <body class="antialiased">

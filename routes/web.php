@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDController ;
 use App\Http\Controllers\AFeature;
 use App\Http\Controllers\BFeature;
 /*
@@ -22,6 +23,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//PersonalData
+Route::get('/PersonalData/{id}', [App\Http\Controllers\PDController ::class, 'PersonalData'])->name('PD');
 
 //A
 Route::get('/AFeature', [App\Http\Controllers\AFeature::class, 'index'])->name('Ahome');
