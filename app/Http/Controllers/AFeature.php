@@ -32,8 +32,8 @@ class AFeature extends Controller
         $docTB = DB::table('adatas')->where('type','網站')->where('status','waiting')->get();
         $docTC = DB::table('adatas')->where('type','客戶')->where('status','waiting')->get();
         $docAll = DB::table('adatas')->get();
-        $docPage =  count($docAll)/1;
-        return view('AFeature.AFeature2',['test' => $doc, 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC, 'docPage' => $docPage]);
+        $TotalPage =  count($docAll)/1;
+        return view('AFeature.AFeature2',['test' => $doc, 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC, 'docPage' => $TotalPage,]);
     }
     public function AUpdate($id){
         DB::table('adatas')
