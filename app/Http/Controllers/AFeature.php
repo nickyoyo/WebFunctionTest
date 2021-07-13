@@ -27,7 +27,7 @@ class AFeature extends Controller
       }
     public function TWO()
     {
-        $doc = DB::table('adatas')->orderBy('type','desc')->get();
+        $doc = DB::table('adatas')->orderBy('type','desc')->whereBetween('id',array(1, 2))->get();
         $docTA = DB::table('adatas')->where('type','業務')->where('status','waiting')->get();
         $docTB = DB::table('adatas')->where('type','網站')->where('status','waiting')->get();
         $docTC = DB::table('adatas')->where('type','客戶')->where('status','waiting')->get();
