@@ -1,35 +1,58 @@
 @extends('layouts.master')
-@extends('layouts.list')
 @extends('layouts.notlogin')
 
 @section('content')
-    <body class="antialiased">
-      <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+<body>
+<div class="container">
+
                 <div class="topic">
-                    <h1>功能B-1</h1>         
+                    <h1>功能B-1-選取資料顯示</h1>         
                </div>
-               @if(isset(Auth::user()->email))
-               <ul class="navigation">
-                <li>  
-                    <dl>
-                        <dt><a href="AFeature" target='_parent'>功能A</a></dt>
-                        <dd><a href="AFeature1" target='_parent'>功能A-1</a></dd>
-                        <dd><a href="AFeature2" target='_parent'>功能A-2</a></dd>
-                    </dl>
-                </li> 
-                <li>  
-                    <dl>
-                        <dt><a href="BFeature" target='_parent'>功能B</a></dt>
-                        <dd><a href="BFeature1" target='_parent'>功能B-1</a></dd>
-                        <dd><a href="BFeature2" target='_parent'>功能B-2</a></dd>
-                    </dl>
-                </li> 
-            </ul>
-               @else
-               <br><br>             
-               @endif
-               
-             
-        </div>
-    </body>
+
+
+
+
+@isset($test)
+@if(count($test)>0)
+<div class="left">
+<table class="tableborder-small" align="left">
+    @foreach($test as $test1)
+    <tr>
+    <th class="textw200px text-a-left">&nbsp;<a href="/BFeature1/{{$test1->id}}">{{$test1->request}}<br>
+    </tr>
+    @endforeach
+</table>
+</div>
+<p>
+@endisset
+@isset($data)
+<div class="right">
+<table class="tableborder">
+    <tr>
+        <th class="bordertopic">部門</th>
+        <th class="bordertopic">類型</th>
+        <th class="bordertopic">需求描述</th>
+        <th class="bordertopic">處理進度</th>
+    </tr>
+    @foreach($data as $test2)
+    <tr>
+    <td class="textw5 text-a-center">{{$test2->users_Dep}}&nbsp;
+    <td class="textw5 text-a-center">{{$test2->type}}&nbsp;   
+    <td class="textw30 text-a-left">&nbsp;{{$test2->request}}<br>
+    <td class="textw5 text-a-center">{{$test2->status}}&nbsp;
+    </tr>
+    @endforeach
+</table>
+
+@endif 
+@endisset
+    
+    
+@if(count($test)==0)
+    <h1>NO Request<h1>
+@endif
+</div>
+</p>
+   </div>
+</body>
 @endsection

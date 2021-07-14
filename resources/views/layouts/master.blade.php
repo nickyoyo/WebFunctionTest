@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="/css/style.css">
     
     <style>
-          
+           .container{
+            position:relative; /*父元素加上relative*/
+            }
+            ​
+            .right{
+                position:absolute; /*父元素加上relative*/
+            }
+            ​
+            .left{
+                position:absolute; /*父元素加上relative*/
+            }
             .topic{
                 position: relative;
                 margin-top:10px;
@@ -46,6 +56,10 @@
                 border:1px solid black;
                 border-collapse:collapse;
             }
+            .tableborder-samll{
+                width:100px;
+                border:1px solid black;
+            }
             .tablemidborder{
                 width:800px;
                 margin: 0px auto;
@@ -64,6 +78,15 @@
             }
             .textw5 {
                     width:5%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
+            .textw5px {
+                    width:5px;
                     padding:10px 0px;
                     color:#555;
                     background-color:#fff;
@@ -92,6 +115,14 @@
             .textw20 {
                 width:20%;
                 padding:10px 0px;
+                color:#555;
+                background-color:#fff;
+                border:1px solid black;
+                font-size:10px;
+                font-weight:solid;
+            }
+            .textw200px {
+                width:200px;
                 color:#555;
                 background-color:#fff;
                 border:1px solid black;

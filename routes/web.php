@@ -49,7 +49,10 @@ Route::post('excel/exportF',[ExcelController::class, 'exportN'])->name('exportN'
 
 //B
 Route::get('/BFeature', [App\Http\Controllers\BFeature::class, 'index'])->name('Bhome');
+
 Route::get('/BFeature1', [App\Http\Controllers\BFeature::class, 'ONE'])->name('BOne');
+Route::get('/BFeature1/{id}', [App\Http\Controllers\BFeature::class, 'ONEshow'])->name('BOne');
+
 Route::get('/BFeature2', [App\Http\Controllers\BFeature::class, 'TWO'])->name('BTwo');
 
 //設定
