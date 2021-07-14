@@ -16,9 +16,9 @@
                          <input type="text" id="users_Dep" name="users_Dep"></p>
                    <label for="type">需求類型:</label>
                         <select name="type" id="type">
-                            <option value="業務">業務</option>
-                            <option value="網站">網站</option>
-                            <option value="客戶">客戶</option>
+                            <option value="business">業務</option>
+                            <option value="web">網站</option>
+                            <option value="client">客戶</option>
                         </select></p>
                     <label for="price">需求細節:</label>
                         <input type="text" id="request" name="request"></p>

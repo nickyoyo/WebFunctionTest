@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDController ;
+use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\AFeature;
 use App\Http\Controllers\BFeature;
 /*
@@ -37,7 +38,13 @@ Route::get('/AFeature2', [App\Http\Controllers\AFeature::class, 'TWO'])->name('A
 Route::get('/AFeature2page', [App\Http\Controllers\AFeature::class, 'TWOpage'])->name('ATwopage');
 Route::post('/UpdateA/{id}',[App\Http\Controllers\AFeature::class, 'AUpdate'])->name('updateA');
 
+Route::get('/AFeature3', [App\Http\Controllers\AFeature::class, 'Three'])->name('AThree');
+
 //B
 Route::get('/BFeature', [App\Http\Controllers\BFeature::class, 'index'])->name('Bhome');
 Route::get('/BFeature1', [App\Http\Controllers\BFeature::class, 'ONE'])->name('BOne');
 Route::get('/BFeature2', [App\Http\Controllers\BFeature::class, 'TWO'])->name('BTwo');
+
+//Excel輸出
+Route::post('excel/exportY',[ExcelController::class, 'exportY'])->name('exportY');
+Route::post('excel/exportF',[ExcelController::class, 'exportN'])->name('exportN');

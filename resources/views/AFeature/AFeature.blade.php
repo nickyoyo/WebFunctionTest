@@ -9,7 +9,8 @@
                     <h1>功能A</h1>         
                </div>
                         <dd><a href="AFeature1" target='_parent'>功能A-1</a>
-                        <a href="AFeature2" target='_parent'>功能A-2</a></dd>          
+                        <a href="AFeature2" target='_parent'>功能A-2</a></dd>         
+                        <a href="AFeature3" target='_parent'>功能A-3</a></dd>          
         </div>
     </body>
 @endsection

@@ -29,10 +29,10 @@ class AFeature extends Controller
     public function TWO()
     {
         //$doc = DB::table('adatas')->orderBy('type','desc')->whereBetween('id',array(1, 10))->get();
-        $doc = DB::table('adatas')->orderBy('type','desc')->get();
-        $docTA = DB::table('adatas')->where('type','業務')->where('status','waiting')->get();
-        $docTB = DB::table('adatas')->where('type','網站')->where('status','waiting')->get();
-        $docTC = DB::table('adatas')->where('type','客戶')->where('status','waiting')->get();
+        $doc = DB::table('adatas')->orderBy('type','asc')->get();
+        $docTA = DB::table('adatas')->where('type','business')->get();
+        $docTB = DB::table('adatas')->where('type','web')->get();
+        $docTC = DB::table('adatas')->where('type','client')->get();
         $docAll = DB::table('adatas')->get();
         $TotalPage =  count($docAll)/10+1;
         if(count($docAll)%10==0 && $TotalPage!=0)$TotalPage--;
@@ -42,10 +42,10 @@ class AFeature extends Controller
     {
         $page = request('Page');
         //$doc = DB::table('adatas')->orderBy('status','desc')->orderBy('type','desc')->whereBetween('id',array($pagec*10+1, $pagec*10+10))->get();
-        $doc = DB::table('adatas')->orderBy('type','desc')->get();
-        $docTA = DB::table('adatas')->where('type','業務')->where('status','waiting')->get();
-        $docTB = DB::table('adatas')->where('type','網站')->where('status','waiting')->get();
-        $docTC = DB::table('adatas')->where('type','客戶')->where('status','waiting')->get();
+        $doc = DB::table('adatas')->orderBy('type','asc')->get();
+        $docTA = DB::table('adatas')->where('type','business')->get();
+        $docTB = DB::table('adatas')->where('type','web')->get();
+        $docTC = DB::table('adatas')->where('type','client')->get();
         $docAll = DB::table('adatas')->get();
         $TotalPage =  count($docAll)/10+1;
         if(count($docAll)%10==0 && $TotalPage!=0)$TotalPage--;
@@ -69,5 +69,18 @@ class AFeature extends Controller
         $doc -> delete();
 
         return redirect('AFeature2');
+      }
+
+      public function Three()
+      {
+          //$doc = DB::table('adatas')->orderBy('type','desc')->whereBetween('id',array(1, 10))->get();
+          $doc = DB::table('adatafinishes')->orderBy('type','asc')->get();
+          $docTA = DB::table('adatafinishes')->where('type','business')->get();
+          $docTB = DB::table('adatafinishes')->where('type','web')->get();
+          $docTC = DB::table('adatafinishes')->where('type','client')->get();
+          $docAll = DB::table('adatafinishes')->get();
+          $TotalPage =  count($docAll)/10+1;
+          if(count($docAll)%10==0 && $TotalPage!=0)$TotalPage--;
+          return view('AFeature.AFeature3',['test' => $doc, 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC, 'page'=>'1', 'docPage' => (int)$TotalPage,]);
       }
 }

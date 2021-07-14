@@ -5,26 +5,24 @@
 <body class="antialiased">
       <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="topic">
-                    <h1>功能A-2-待處理需求資料顯示</h1>         
+                    <h1>功能A-3-完成需求資料顯示</h1>         
                </div>
 
-待處理需求統計=>
+已完成需求統計=>
 <td class="countdata">業務 : {{count($docTA)}}&nbsp;
 <td class="countdata">網站 : {{count($docTB)}}&nbsp;
 <td class="countdata">客戶 : {{count($docTC)}}&nbsp;
 <p>
 </div>
-
-
 @isset($test)
 @if(count($test)>0)
 
-<form action="{{ route('exportN') }}" method="POST">
+<form action="{{ route('exportY') }}" method="POST">
         @csrf
         <button>Export Excel</button>
 </form><p>
 
-
+    <td width="50%" text-align="left">
         <?php if ($docPage > 0) { ?>
         <form name="SelPage" method="get" action="{{ route('ATwopage') }}">
         @csrf
@@ -39,30 +37,23 @@
         </select>頁 共<?php echo $docPage ?>頁
         </form>
         <?php } ?>
-    
-
 
     <table class="tableborder">
+    
     <tr>
 
-        <th class="bordertopic">功能</th>
         <th class="bordertopic">部門</th>
         <th class="bordertopic">類型</th>
         <th class="bordertopic">需求描述</th>
         <th class="bordertopic">處理進度</th>
     </tr>
-    @php $countitem=0; @endphp
+    @php $countitem=1; @endphp
     @foreach($test as $test1)
     <tfoot>
     <tr>
-     @if($countitem>=($page-1)*10 && $countitem<=($page-1)*10+9)
-        <td class="textw5 text-a-left">
-        <form action="{{ route('updateA', $test1->id) }}" method="POST">
-        @csrf
-        <button>Finish</button>
-        </form>
+      @if($countitem>=($page-1)*10+1 && $countitem<=($page-1)*10+10)
 
-    <td class="textw5 text-a-center">{{$test1->users_Dep}}&nbsp;
+    <td class="textw5 text-a-center">{{$test1->users_Dep}}&nbsp; 
     <td class="textw5 text-a-center">{{$test1->type}}&nbsp;   
     <td class="textw30 text-a-left">&nbsp;{{$test1->request}}<br>
     <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
