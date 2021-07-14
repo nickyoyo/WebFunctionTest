@@ -46,6 +46,13 @@
                 border:1px solid black;
                 border-collapse:collapse;
             }
+            .tablemidborder{
+                width:800px;
+                margin: 0px auto;
+                border-left:1px solid black;
+                border-right:1px solid black;
+                border-collapse:collapse;
+            }
             .textw3 {
                     width:3%;
                     padding:10px 0px;
@@ -117,6 +124,9 @@
             form {
                 display: inline;
             }
+            li {
+            　display:inline;
+            }
             .buttonback {
                 width:90px;
                 height:25px;
@@ -130,6 +140,13 @@
                 float:left;
                 width:80px;
             }
+            .settingtopic{
+                  padding:10px 10px;
+                    color:#555;
+                    background-color:#fff;
+                    font-size:20px;
+ 
+            }
         </style>
 </head>
 <body>
@@ -139,6 +156,8 @@
             <div class="navbar-header">       
                 <a class="navbar-brand" href="/">首頁</a>
                 <a class="navbar-brand" href="/news">今日消息</a>
+                <a class="navbar-brand" href="/setting/0">設定</a>
+                
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">

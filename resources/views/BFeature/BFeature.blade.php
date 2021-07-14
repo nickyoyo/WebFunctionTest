@@ -9,7 +9,7 @@
                     <h1>功能B</h1>         
                </div>
                <dd><a href="BFeature1" target='_parent'>功能B-1</a>
-                        <a href="BFeature2" target='_parent'>功能B-2</a></dd>        
+                <a href="BFeature2" target='_parent'>功能B-2</a></dd>        
                
         </div>
     </body>
