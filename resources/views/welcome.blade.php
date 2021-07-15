@@ -22,7 +22,7 @@
                     <dl>
                         <dt><a href="BFeature" target='_parent'>功能B</a></dt>
                         <dd><a href="BFeature1" target='_parent'>功能B-修改特定需求</a></dd>
-                        <dd><a href="BFeature2" target='_parent'>功能B-顯示所有需求</a></dd>
+                        <dd><a href="BFeature2" target='_parent'>功能B-顯示剛修改需求</a></dd>
                     </dl>
                 </li> 
                 <li> 

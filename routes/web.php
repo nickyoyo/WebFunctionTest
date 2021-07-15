@@ -62,10 +62,9 @@ Route::get('/BFeature1', [App\Http\Controllers\BFeature::class, 'ONE'])->name('B
 Route::get('/BFeature1/{id}', [App\Http\Controllers\BFeature::class, 'ONEshow'])->name('BOne');
 Route::post('/BFeature1/change/{id}', [App\Http\Controllers\BFeature::class, 'ONEchange'])->name('changeB');
 
-//顯示所有需求Page1
+//顯示所有需求Page
 Route::get('/BFeature2', [App\Http\Controllers\BFeature::class, 'TWO'])->name('BTwo');
-//顯示所有需求選擇Page後
-Route::get('/BFeature2page', [App\Http\Controllers\BFeature::class, 'TWOpage'])->name('BTwopage');
+
 
 
 //設定

@@ -15,6 +15,7 @@
 @isset($test)
 @if(count($test)>0)
 <div class="left">
+
 <table class="tableborder-small">
     @foreach($test as $test1)
     <tr>

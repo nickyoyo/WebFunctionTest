@@ -5,6 +5,7 @@ use App\Models\adatas;
 use App\Models\adatafinishes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class BFeature extends Controller
 {
@@ -38,7 +39,8 @@ class BFeature extends Controller
         return view('BFeature.BFeature1',['test' => $doc,'data' => $docdata, 'type' => $type]);
     }
     public function ONEchange($id)
-    {
+    {   
+        Session::put('changeID', $id);
         $data = DB::table('adatas')
               ->where('id',$id)
               ->update([
@@ -48,6 +50,7 @@ class BFeature extends Controller
                 'type' => request('type'),
                 'status' => "waiting",
             ]); 
+
             $doc = DB::table('adatas')->orderBy('type','asc')->get();
             $docdata = DB::table('adatas')->where('id',$id)->get();
 
@@ -59,5 +62,10 @@ class BFeature extends Controller
 
             return view('BFeature.BFeature1',['test' => $doc,'data' => $docdata, 'type' => $type]);
     }
-   
+    public function TWO()
+    {
+        $id = Session::get('changeID' , function() { return -1; });
+        $doc = DB::table('adatas')->orderBy('PersonalID','asc')->get();
+        return view('BFeature.BFeature2',['test' => $doc, 'id' => $id]);
+    }
 }
