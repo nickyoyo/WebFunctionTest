@@ -59,12 +59,18 @@
             .tableborder-samll{
                 width:100px;
                 border:1px solid black;
+                margin-left: 1em;
             }
             .tablemidborder{
                 width:800px;
                 margin: 0px auto;
                 border-left:1px solid black;
                 border-right:1px solid black;
+                border-collapse:collapse;
+            }
+            .tableBchange{
+                width:500px;
+                border:1px solid black;   
                 border-collapse:collapse;
             }
             .textw3 {

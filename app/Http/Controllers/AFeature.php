@@ -78,9 +78,70 @@ class AFeature extends Controller
           $docTA = DB::table('adatafinishes')->where('type','business')->get();
           $docTB = DB::table('adatafinishes')->where('type','web')->get();
           $docTC = DB::table('adatafinishes')->where('type','client')->get();
+
           $docAll = DB::table('adatafinishes')->get();
           $TotalPage =  count($docAll)/10+1;
           if(count($docAll)%10==0 && $TotalPage!=0)$TotalPage--;
           return view('AFeature.AFeature3',['test' => $doc, 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC, 'page'=>'1', 'docPage' => (int)$TotalPage,]);
       }
+      public function Threepage()
+    {
+        $page = request('Page');
+        //$doc = DB::table('adatas')->orderBy('status','desc')->orderBy('type','desc')->whereBetween('id',array($pagec*10+1, $pagec*10+10))->get();
+        $doc = DB::table('adatafinishes')->orderBy('type','asc')->get();
+        $docTA = DB::table('adatafinishes')->where('type','business')->get();
+        $docTB = DB::table('adatafinishes')->where('type','web')->get();
+        $docTC = DB::table('adatafinishes')->where('type','client')->get();
+
+        $docAll = DB::table('adatafinishes')->get();
+        $TotalPage =  count($docAll)/10+1;
+        if(count($docAll)%10==0 && $TotalPage!=0)$TotalPage--;
+        return view('AFeature.AFeature3',['test' => $doc, 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC, 'page'=>$page, 'docPage' => (int)$TotalPage,]);
+    }
+
+    public function Four()
+    {
+        //$doc = DB::table('adatas')->orderBy('type','desc')->whereBetween('id',array(1, 10))->get();
+        $docN = DB::table('adatas')->orderBy('type','asc')->get();
+        $docY = DB::table('adatafinishes')->orderBy('type','asc')->get();
+
+        $docNTA = DB::table('adatas')->where('type','business')->get();
+        $docNTB = DB::table('adatas')->where('type','web')->get();
+        $docNTC = DB::table('adatas')->where('type','client')->get();
+
+        $docYTA = DB::table('adatafinishes')->where('type','business')->get();
+        $docYTB = DB::table('adatafinishes')->where('type','web')->get();
+        $docYTC = DB::table('adatafinishes')->where('type','client')->get();
+
+        $docNAll = DB::table('adatas')->get();
+        $docYAll = DB::table('adatafinishes')->get();
+        $docAll = count($docNAll)+count($docYAll);
+        $TotalPage =  $docAll/10+1;
+
+        if($docAll%10==0 && $TotalPage!=0)$TotalPage--;
+        return view('AFeature.AFeature4',['testN' => $docN,'testY' => $docY , 'docNTA' => $docNTA, 'docNTB' => $docNTB, 'docNTC' => $docNTC, 'docYTA' => $docYTA, 'docYTB' => $docYTB, 'docYTC' => $docYTC, 'page'=>'1', 'docPage' => (int)$TotalPage,]);
+    }
+    public function Fourpage()
+    {
+        $page = request('Page');
+
+        $docN = DB::table('adatas')->orderBy('type','asc')->get();
+        $docY = DB::table('adatafinishes')->orderBy('type','asc')->get();
+        //$doc = DB::table('adatas')->orderBy('status','desc')->orderBy('type','desc')->whereBetween('id',array($pagec*10+1, $pagec*10+10))->get();
+        $docNTA = DB::table('adatas')->where('type','business')->get();
+        $docNTB = DB::table('adatas')->where('type','web')->get();
+        $docNTC = DB::table('adatas')->where('type','client')->get();
+
+        $docYTA = DB::table('adatafinishes')->where('type','business')->get();
+        $docYTB = DB::table('adatafinishes')->where('type','web')->get();
+        $docYTC = DB::table('adatafinishes')->where('type','client')->get();
+
+        $docNAll = DB::table('adatas')->get();
+        $docYAll = DB::table('adatafinishes')->get();
+        $docAll = count($docNAll)+count($docYAll);
+        $TotalPage =  $docAll/10+1;
+
+        if($docAll%10==0 && $TotalPage!=0)$TotalPage--;
+        return view('AFeature.AFeature4',['testN' => $docN,'testY' => $docY , 'docNTA' => $docNTA, 'docNTB' => $docNTB, 'docNTC' => $docNTC, 'docYTA' => $docYTA, 'docYTB' => $docYTB, 'docYTC' => $docYTC, 'page'=>$page, 'docPage' => (int)$TotalPage,]);
+    }
 }

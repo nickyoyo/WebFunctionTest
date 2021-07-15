@@ -25,12 +25,39 @@ class BFeature extends Controller
     }
     public function ONEshow($id)
     {
+        
         $doc = DB::table('adatas')->orderBy('type','asc')->get();
         $docdata = DB::table('adatas')->where('id',$id)->get();
-        return view('BFeature.BFeature1',['test' => $doc,'data' => $docdata]);
+
+        foreach($docdata as $data){
+        if(strcmp($data->type,'business')==0)$type='業務';
+        if(strcmp($data->type,'web')==0)$type='網站';
+        if(strcmp($data->type,'client')==0)$type='客戶';
+        }
+  
+        return view('BFeature.BFeature1',['test' => $doc,'data' => $docdata, 'type' => $type]);
     }
-    public function TWO()
+    public function ONEchange($id)
     {
-        return view('BFeature.BFeature2');
+        $data = DB::table('adatas')
+              ->where('id',$id)
+              ->update([
+                'PersonalID' => request('PID'),
+                'users_Dep' => request('users_Dep'),
+                'request' => request('request'),
+                'type' => request('type'),
+                'status' => "waiting",
+            ]); 
+            $doc = DB::table('adatas')->orderBy('type','asc')->get();
+            $docdata = DB::table('adatas')->where('id',$id)->get();
+
+            foreach($docdata as $data){
+                if(strcmp($data->type,'business')==0)$type='業務';
+                if(strcmp($data->type,'web')==0)$type='網站';
+                if(strcmp($data->type,'client')==0)$type='客戶';
+            }
+
+            return view('BFeature.BFeature1',['test' => $doc,'data' => $docdata, 'type' => $type]);
     }
+   
 }

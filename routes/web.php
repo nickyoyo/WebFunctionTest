@@ -40,20 +40,33 @@ Route::get('/AFeature2', [App\Http\Controllers\AFeature::class, 'TWO'])->name('A
 Route::get('/AFeature2page', [App\Http\Controllers\AFeature::class, 'TWOpage'])->name('ATwopage');
 //更新需求資料庫、刪掉未完成資料庫資料、新增完成資料庫資料
 Route::post('/UpdateA/{id}',[App\Http\Controllers\AFeature::class, 'AUpdate'])->name('updateA');
-//顯示已完成需求
+//顯示已完成需求Page1
 Route::get('/AFeature3', [App\Http\Controllers\AFeature::class, 'Three'])->name('AThree');
+//顯示已完成需求選擇Page後
+Route::get('/AFeature3page', [App\Http\Controllers\AFeature::class, 'Threepage'])->name('AThreepage');
+//顯示所有需求Page1
+Route::get('/AFeature4', [App\Http\Controllers\AFeature::class, 'Four'])->name('AFour');
+//顯示所有需求選擇Page後
+Route::get('/AFeature4page', [App\Http\Controllers\AFeature::class, 'Fourpage'])->name('AFourpage');
 //Excel輸出已完成需求
 Route::post('excel/exportY',[ExcelController::class, 'exportY'])->name('exportY');
 //Excel輸出待完成需求
 Route::post('excel/exportF',[ExcelController::class, 'exportN'])->name('exportN');
+//Excel輸出所有需求
+Route::post('excel/exportAll',[ExcelController::class, 'exportAll'])->name('exportAll');
 
 //B
 Route::get('/BFeature', [App\Http\Controllers\BFeature::class, 'index'])->name('Bhome');
 
 Route::get('/BFeature1', [App\Http\Controllers\BFeature::class, 'ONE'])->name('BOne');
 Route::get('/BFeature1/{id}', [App\Http\Controllers\BFeature::class, 'ONEshow'])->name('BOne');
+Route::post('/BFeature1/change/{id}', [App\Http\Controllers\BFeature::class, 'ONEchange'])->name('changeB');
 
+//顯示所有需求Page1
 Route::get('/BFeature2', [App\Http\Controllers\BFeature::class, 'TWO'])->name('BTwo');
+//顯示所有需求選擇Page後
+Route::get('/BFeature2page', [App\Http\Controllers\BFeature::class, 'TWOpage'])->name('BTwopage');
+
 
 //設定
 Route::get('/setting/{num}', [App\Http\Controllers\settingController::class, 'index'])->name('set');

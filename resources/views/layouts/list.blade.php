@@ -6,7 +6,7 @@
 .navigation {
 	margin:0; 
 	padding:0;
-	width:950px;
+	width:1200px;
 	list-style-type:none; 
 	font:12px Arial; 
 	}
@@ -14,13 +14,13 @@
 .navigation li {
 	float:left; 
     padding:0; 
-	margin:0 10px 0 0; 
+	margin:0 50px 0 0; 
 	width:108px;
 	}
  
 /* 設置選單區塊*/
 .navigation li dl { 
-	width:100px;
+	width:150px;
     margin:0; 
 	padding:0;
 	background-color:#fff;

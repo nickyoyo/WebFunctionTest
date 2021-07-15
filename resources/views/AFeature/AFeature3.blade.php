@@ -24,7 +24,7 @@
 
     <td width="50%" text-align="left">
         <?php if ($docPage > 0) { ?>
-        <form name="SelPage" method="get" action="{{ route('ATwopage') }}">
+        <form name="SelPage" method="get" action="{{ route('AThreepage') }}">
         @csrf
         第<select name="Page" onchange="submit();">
         <?php 
