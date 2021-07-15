@@ -21,9 +21,10 @@ class CFeature extends Controller
     { 
         $n = request('request');
         Session::put('changerequest', $n);
-        $doc = DB::table('adatas')->where('request','LIKE','%'.$n.'%')->orderBy('type','desc')->get();
+        $docN = DB::table('adatas')->where('request','LIKE','%'.$n.'%')->orderBy('type','desc')->get();
+        $docY = DB::table('adatafinishes')->where('request','LIKE','%'.$n.'%')->orderBy('type','desc')->get();
 
-        return view('CFeature.CFeature1',['test' => $doc , 'changerequest' => $n]);
+        return view('CFeature.CFeature1',['testN' => $docN, 'testY' => $docY, 'changerequest' => $n]);
     }
     public function ONEchange($id){
         $doc = DB::table('adatas')->where('id',$id)->get();
@@ -43,9 +44,10 @@ class CFeature extends Controller
         $doc -> delete();
 
         $changerequest = Session::get('changerequest');
-        $doc = DB::table('adatas')->where('request','LIKE','%'.$changerequest.'%')->orderBy('type','desc')->get();
+        $docN = DB::table('adatas')->where('request','LIKE','%'.$changerequest.'%')->orderBy('type','desc')->get();
+        $docY = DB::table('adatafinishes')->where('request','LIKE','%'.$changerequest.'%')->orderBy('type','desc')->get();
 
-        return view('CFeature.CFeature1',['test' => $doc, 'changerequest' => $changerequest]);
+        return view('CFeature.CFeature1',['testN' => $docN, 'testY' => $docY, 'changerequest' => $changerequest]);
       }
 
     public function TWO()

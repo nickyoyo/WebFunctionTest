@@ -17,8 +17,7 @@
 </form> 
 
 
-@isset($test)
-@if(count($test)>0)
+@if(count($testN)>0 || count($testY)>0)
 
 
     <table class="tableborder">
@@ -29,7 +28,7 @@
         <th class="bordertopic">需求描述</th>
         <th class="bordertopic">處理進度</th>
     </tr>
-    @foreach($test as $test1)
+    @foreach($testN as $test1)
     <tr>
     <td class="textw5 text-a-center">
         <form action="{{ route('updateC', $test1->id) }}" method="POST">
@@ -42,16 +41,25 @@
     <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
     </tr>
     @endforeach
+    @foreach($testY as $test1)
+    <tr>
+    <td class="textw5 text-a-center">
+    <td class="textw5 text-a-center">{{$test1->users_Dep}}&nbsp;
+    <td class="textw5 text-a-center">{{$test1->type}}&nbsp;   
+    <td class="textw30 text-a-left">&nbsp;{{$test1->request}}<br>
+    <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
+    </tr>
+    @endforeach
 </table>
 
 @endif 
 
     
     
-@if(count($test)==0)
+@if(count($testN)==0 && count($testY)==0)
     <h1>NO Request<h1>
 @endif
-@endisset
+
 </p>
 <input type ="button" onclick="history.back()" value="Back"></input>
    <a href="/" class="back" style="color:black;font-size:10px;">回首頁</a>
