@@ -57,15 +57,20 @@ Route::post('excel/exportAll',[ExcelController::class, 'exportAll'])->name('expo
 
 //B
 Route::get('/BFeature', [App\Http\Controllers\BFeature::class, 'index'])->name('Bhome');
-
+//選擇指定需求，顯示其詳細資料
 Route::get('/BFeature1', [App\Http\Controllers\BFeature::class, 'ONE'])->name('BOne');
 Route::get('/BFeature1/{id}', [App\Http\Controllers\BFeature::class, 'ONEshow'])->name('BOne');
+//修改資料內容
 Route::post('/BFeature1/change/{id}', [App\Http\Controllers\BFeature::class, 'ONEchange'])->name('changeB');
-
-//顯示所有需求Page
+//將剛剛修改的資料紅字
 Route::get('/BFeature2', [App\Http\Controllers\BFeature::class, 'TWO'])->name('BTwo');
 
-
+//C
+Route::get('/CFeature', [App\Http\Controllers\CFeature::class, 'index'])->name('Chome');
+Route::get('/CFeature1', [App\Http\Controllers\CFeature::class, 'ONE'])->name('COne');
+Route::post('/CFeature1/show/{id}', [App\Http\Controllers\CFeature::class, 'ONEchange'])->name('updateC');
+Route::get('/CFeature1/show', [App\Http\Controllers\CFeature::class, 'ONEshow'])->name('COne');
+Route::get('/CFeature2', [App\Http\Controllers\CFeature::class, 'TWO'])->name('CTwo');
 
 //設定
 Route::get('/setting/{num}', [App\Http\Controllers\settingController::class, 'index'])->name('set');

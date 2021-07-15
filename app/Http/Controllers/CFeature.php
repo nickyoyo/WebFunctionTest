@@ -9,5 +9,48 @@ use Session;
 
 class CFeature extends Controller
 {
-    
+    public function index()
+    {
+        return view('CFeature.CFeature');
+    }
+    public function ONE()
+    {
+       return view('CFeature.CFeature1');
+    }
+    public function ONEshow()
+    { 
+        $n = request('request');
+        Session::put('changerequest', $n);
+        $doc = DB::table('adatas')->where('request','LIKE','%'.$n.'%')->orderBy('type','desc')->get();
+
+        return view('CFeature.CFeature1',['test' => $doc]);
+    }
+    public function ONEchange($id){
+        $doc = DB::table('adatas')->where('id',$id)->get();
+        foreach($doc as $data){
+            adatafinishes::create([
+                'id' => $data->id,
+                'created_at' => $data->created_at,
+                'updated_at' => $data->updated_at,
+                'PersonalID' => $data->PersonalID,
+                'users_Dep' => $data->users_Dep,
+                'request' => $data->request,
+                'type' => $data->type,
+                'status' => "finish",
+            ]); 
+        }
+        $doc = adatas::findorFail($id);
+        $doc -> delete();
+
+        $changerequest = Session::get('changerequest');
+        $doc = DB::table('adatas')->where('request','LIKE','%'.$changerequest.'%')->orderBy('type','desc')->get();
+
+        return view('CFeature.CFeature1',['test' => $doc]);
+      }
+
+    public function TWO()
+    {
+
+        return view('CFeature.CFeature2',['test' => $doc, 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC]);
+    }
 }

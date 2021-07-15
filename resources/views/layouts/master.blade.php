@@ -158,7 +158,7 @@
             .text-a-center{
                 text-align:center;
             }
-            form {
+            ul form {
                 display: inline;
             }
             li {

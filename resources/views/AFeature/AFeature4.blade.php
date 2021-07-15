@@ -59,7 +59,6 @@
     @php $countitem=0; @endphp
 
     @foreach($testN as $test1)
-    <tfoot>
     <tr>
      @if($countitem>=($page-1)*10 && $countitem<=($page-1)*10+9)
         <td class="textw5 text-a-left">
@@ -73,7 +72,6 @@
     <td class="textw30 text-a-left">&nbsp;{{$test1->request}}<br>
     <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
     </tr>
-    </tfoot>
     @endif
     @php $countitem++; @endphp
     @endforeach
@@ -83,7 +81,6 @@
 @isset($testY)
 @if(count($testY)>0)
     @foreach($testY as $test1)
-    <tfoot>
     <tr>
      @if($countitem>=($page-1)*10 && $countitem<=($page-1)*10+9)
         <td class="textw5 text-a-left">
@@ -93,7 +90,6 @@
     <td class="textw30 text-a-left">&nbsp;{{$test1->request}}<br>
     <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
     </tr>
-    </tfoot>
     @endif
     @php $countitem++; @endphp
     @endforeach

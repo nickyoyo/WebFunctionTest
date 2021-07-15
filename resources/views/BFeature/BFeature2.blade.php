@@ -12,7 +12,6 @@
         <th class="bordertopic">需求細節</th>
     </tr>
     @foreach($test as $test1)
-    <tfoot>
     <tr>
     @if($test1->id == $id)
     <td class="textw5 text-a-center" style="color:red;">{{$test1->PersonalID}}&nbsp;
@@ -26,7 +25,6 @@
     <td class="textw30 text-a-left">{{$test1->request}}&nbsp;
     @endif
     </tr>
-    </tfoot>
     @endforeach
 </table>
 

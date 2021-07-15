@@ -28,7 +28,7 @@
                 <li> 
                     <dl>
                         <dt><a href="CFeature" target='_parent'>功能C</a></dt>
-                        <dd><a href="CFeature1" target='_parent'>功能C-1</a></dd>
+                        <dd><a href="CFeature1" target='_parent'>功能C-搜尋需求資料</a></dd>
                         <dd><a href="CFeature2" target='_parent'>功能C-2</a></dd>
                     </dl>
                 </li> 

@@ -42,7 +42,7 @@
     
 
 
-    <table class="tableborder">
+<table class="tableborder">
     <tr>
 
         <th class="bordertopic">功能</th>
@@ -53,10 +53,9 @@
     </tr>
     @php $countitem=0; @endphp
     @foreach($test as $test1)
-    <tfoot>
     <tr>
      @if($countitem>=($page-1)*10 && $countitem<=($page-1)*10+9)
-        <td class="textw5 text-a-left">
+        <td class="textw5 text-a-center">
         <form action="{{ route('updateA', $test1->id) }}" method="POST">
         @csrf
         <button>Finish</button>
@@ -67,7 +66,6 @@
     <td class="textw30 text-a-left">&nbsp;{{$test1->request}}<br>
     <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
     </tr>
-    </tfoot>
     @endif
     @php $countitem++; @endphp
     @endforeach
