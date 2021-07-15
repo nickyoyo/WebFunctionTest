@@ -23,7 +23,7 @@ class CFeature extends Controller
         Session::put('changerequest', $n);
         $doc = DB::table('adatas')->where('request','LIKE','%'.$n.'%')->orderBy('type','desc')->get();
 
-        return view('CFeature.CFeature1',['test' => $doc]);
+        return view('CFeature.CFeature1',['test' => $doc , 'changerequest' => $n]);
     }
     public function ONEchange($id){
         $doc = DB::table('adatas')->where('id',$id)->get();
@@ -45,7 +45,7 @@ class CFeature extends Controller
         $changerequest = Session::get('changerequest');
         $doc = DB::table('adatas')->where('request','LIKE','%'.$changerequest.'%')->orderBy('type','desc')->get();
 
-        return view('CFeature.CFeature1',['test' => $doc]);
+        return view('CFeature.CFeature1',['test' => $doc, 'changerequest' => $changerequest]);
       }
 
     public function TWO()

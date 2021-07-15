@@ -11,7 +11,7 @@
 <form action="/CFeature1/show" method="GET" enctype="multipart/form-data">
 @csrf
      <label for="request">搜尋:</label>
-          <input type="text" id="request" name="request" placeholder="請輸入需求的關鍵字">&nbsp;
+          <input type="text" id="request" name="request" value="<?php if(isset($changerequest))echo $changerequest; ?>" placeholder="請輸入需求的關鍵字">&nbsp;
    <input type="submit" value="Send">
    
 </form> 
