@@ -20,7 +20,7 @@ use App\Http\Controllers\BFeature;
 Route::get('/', function () {
     return view('welcome');
 });
-
+ 
 
 Auth::routes();
 
